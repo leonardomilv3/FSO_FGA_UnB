@@ -4,8 +4,10 @@ FSO_FGA_UnB 📚-Repositório Criado para a disciplina de Fundamentos de Sistema
 
 ## Colaboradores 
 
-Eu, Leonardo Vitoriano, e Bernardo Pissutti reunimos esforços para deixar alguns problemas do [CD-MOJ](https://moj.naquadah.com.br/cgi-bin/index.sh) resolvidos, para os discentes que estão com dificuldades em resolvê-los. É importante destacar, que o código, que soluciona os exercícios propostos, é meramente para consulta, com o objetivo de auxiliar na lógica para a construção do seu próprio código.
+Eu, Leonardo Vitoriano, e Bernardo Pissutti reunimos esforços para deixar alguns problemas do [CD-MOJ](https://moj.naquadah.com.br/cgi-bin/index.sh) resolvidos, para os discentes que estão com dificuldades em resolvê-los. É importante destacar, que o código, que soluciona os exercícios propostos, é meramente para consulta, com o objetivo de auxiliar na lógica para a construção do seu próprio código. Além do que, caso aja a tentativa de copiar as soluções apresentadas aqui, você tomará **zero** em sua atividade, pois no MOJ posuí ferramenta para identificar plágio. Use o repositório com sabedoria!
 
+- Leonardo Vitoriano
+- Bernardo Pissuti
 
 ## 1ª Lista de FSO 2022-2 - Trabalho 1
 
