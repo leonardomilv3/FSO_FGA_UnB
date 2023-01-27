@@ -3,41 +3,41 @@
 Processos(entidade ativa) são programas(entidade passiva) em execução, um programa só pode ser executado na memoria principal do computador.
 
 Um processo é uma parte da memória separada pelo sistema operacional para conter conter um progerama que será executado. Essa memória que foi separada possui diversas parte, entre elas:
--> text section: codigo do programa
--> program counter: codigo que está em execução
--> stack: dados temporarios
--> data section: variaveis globais
--> heap: memoria alocada dinamicamente
+* text section: codigo do programa
+* program counter: codigo que está em execução
+* stack: dados temporarios
+* data section: variaveis globais
+* heap: memoria alocada dinamicamente
 
-Um processo pode ter vários estados
--> new: esta sendo criado
--> running: esta sendo executado
--> waiting: esperando um evento acontecer
--> ready: esperando para ser alocado para um processador
--> terminated: finalizou execução
+Um processo pode ter vários estados:
+* new: esta sendo criado
+* running: esta sendo executado
+* waiting: esperando um evento acontecer
+* ready: esperando para ser alocado para um processador
+* terminated: finalizou execução
 
-Caminho entre estado
--> ready => running (escalonador alocou um processador para o processo)
--> running => ready (interrupção)
--> wating => ready (I/O completo)
--> running => waiting (I/O iniciado)
+Caminhos entre estados:
+* ready -> running (escalonador alocou um processador para o processo)
+* running -> ready (interrupção)
+* wating -> ready (I/O completo)
+* running -> waiting (I/O iniciado)
 
 Bloco de controle de processo (process controle block) armazena informações associadas a cada processo
--> estado do processo
--> program counter (localização da proxima instrução)
--> CPU registers
--> CPU scheduling information
--> Informações de gerenciamento de memoria (memoria alocada para o processo)
--> Accounting information
--> Informação de status do I/O
+* estado do processo
+* program counter (localização da proxima instrução)
+* CPU registers
+* CPU scheduling information
+* Informações de gerenciamento de memoria (memoria alocada para o processo)
+* Accounting information
+* Informação de status do I/O
 
 Com vários contadores de programa(program counters) é possivel executar diferentes localizações ao mesmo tempo, também chamado de threads. Para isso é preciso armazenar os detalhes das threads e os contadores de programa no PCB.
 
 O escalonamento de processos é feito entre os diverosos processos disponiveis para a proxima execução, com ele é possivel maximizar a utilização da CPU. O escalonador de processos mantém filas de escalonamento de processos.
--> Job queue: conjunto de todos os processos no sistema
--> Ready queue: conjunto de todos os processos que estão na memoria principal, ready e waiting para executar.
--> Device queue: conjunto de processos waiting por um dispositivo I/O.
--> Processos migram entre as várias filas  
+* Job queue: conjunto de todos os processos no sistema
+* Ready queue: conjunto de todos os processos que estão na memoria principal, ready e waiting para executar.
+* Device queue: conjunto de processos waiting por um dispositivo I/O.
+* Processos migram entre as várias filas  
 
 Short-term scheduler(CPU schedulers) seleciona qual proximo processo deve ser executado na CPU. Ele é "invocado" frequentemente, por isso deve ser rápido
 
@@ -50,34 +50,32 @@ Quando a CPU muda de processo, o sistema tem que salvar o estado do processo ant
 A troca de contexto custa muito tempo, e durante esse tempo o sistema não faz nenhum trabalho util.
 
 No termino do processo, ele executa a ultima declaração e faz um chamada de sistema(system call) exit() para deletar.
--> Ele retorna as informações de status de filho para pai(através do wait())
--> Os recursos alocado para o processo são desalocados pelo sistema operacional
+* Ele retorna as informações de status de filho para pai(através do wait())
+* Os recursos alocado para o processo são desalocados pelo sistema operacional
 
 Os processos pai podem terminar a execução de processos filhos usando a chamada de sistema abort(). Razões para fazer isso:
--> O processo filho excedeu a quantidade de recursos alocados
--> A tarefa do processo filho não é mais requisitada pelo processo pai
--> O processo pai está terminando e o sistema operacional não permite que o processo filho continue(cascading termination, nem todos os sistemas operacionais funcionam assim)
+* O processo filho excedeu a quantidade de recursos alocados
+* A tarefa do processo filho não é mais requisitada pelo processo pai
+* O processo pai está terminando e o sistema operacional não permite que o processo filho continue(cascading termination, nem todos os sistemas operacionais funcionam assim)
 
 Um processo pai pode esperar pelo termino de um processo filho a partir da chamada de sistema wait. A chamada retorna a informação de estatus e o pid(process id) do processo terminado. Se o processo não pai está esperando (ou seja, não chamou o wait()), então o processo se torna um zumbie. Se o processo pai terminou sem "invocar" o wait(), então o processo se torna orfão
 
 Para processos se comunicarem existem dois métodos:
--> Shared memory(memória compartilhada)
--> Message passing(passgem de mensagem)
+* Shared memory(memória compartilhada) (caiu na prova)
+* Message passing(passgem de mensagem) (caiu na prova)
 
-** Shared memory:
+Shared memory:
 Uma área da memória que é compartilhada entre processos que querem se comunicar. Essa comunicação é controlada pelos processos de usuário e não pelo sistema operacional.
 
-** Message passing:
+Message passing:
 Para que a comunicação ocorra sem a necessidade de depender em variáveis compartilhadas, pode-se usar duas operações, send(message) e receive(message) (sistema de mensagens), que é um mecanismo para processos se comunicarem e sincronizar suas ações. Mas, para isso é necessário estabelecer links de comunicação(comunication links), os links de comunicação podem ser feitos de duas formas:
 1. Física: memória compartilhada / rede / barramento
 2. Lógica: Direta ou indireta/ sincrona ou assincrona / automatica ou explicit buffering 
 
-** Pode ocorrer de dois ou mais processos estarem esperando indefinidamente por um evento que só pode ser causado por um dos processo que está em espera, isso é chamado de DEADLOCK.
-** Quando um processo fica indefinidamente na fila de bloqueados do semaforo, esse evento é chamado de STARVATION.
-** No evento de um processo de baixa prioridade impedir a execução de um processo de alta prioridade, esse problema de escalonamento é chamado de PRIORITY INVERSION. 
+Pode ocorrer de dois ou mais processos estarem esperando indefinidamente por um evento que só pode ser causado por um dos processo que está em espera, isso é chamado de DEADLOCK. (caiu na prova)
+Quando um processo fica indefinidamente na fila de bloqueados do semaforo, esse evento é chamado de STARVATION. (caiu na prova)
+No evento de um processo de baixa prioridade impedir a execução de um processo de alta prioridade, esse problema de escalonamento é chamado de PRIORITY INVERSION. (caiu na prova)
  
-
-
 # THREADS
 	
 A thread é uma unidade fundamental de utilização da CPU que forma a base para um sistema computacional multithreaded
@@ -85,14 +83,14 @@ A thread é uma unidade fundamental de utilização da CPU que forma a base para
 Em uma arquitetura multicore ou multiprocessor é permitido o uso de paralelismo.
 
 Diferença entre paralelismo e concorrencia
--> Paralelismo: mais de uma tarefa(processo ou thread) sendo executada ao mesmo tempo. => Necessita de um sistema multicore
--> Concorrencia: mais de uma tarefa(processo ou thread) fazendo progresso, a partir do escalonamento. => Pode ocorrer em um sistema singlecore
+* Paralelismo: mais de uma tarefa(processo ou thread) sendo executada ao mesmo tempo. => Necessita de um sistema multicore
+* Concorrencia: mais de uma tarefa(processo ou thread) fazendo progresso, a partir do escalonamento. => Pode ocorrer em um sistema singlecore
 
 As threads podem ser dividas em duas categorias, as user threads e as kernel threads. As user threads são gerencias pelas bibliotecas de threads a nível de usuário, as kernel threads são apoiadas pelo kernel. Assim existem várias formas dessas threads se comunicarem (user threads -> kernel threads)
--> Many-to-one, são várias threads de usuário mapeadas para uma unica thread de kernel. (Uma só pode estar no kernel por vez, isso elimina a possibilidade de multithread)
--> One-to-one, uma thread de usuário é mapeada para uma thread de kernel. (pode haver restrições de numero de thread para não sobrecarregar)
--> Many-to-many, várias threads de usuário mapeadas para várias threads de kernel.
--> Two-level, similar a M:M, além de que permite que uma thread de usuário seja conectada a uma thread de sistema.
+1. Many-to-one, são várias threads de usuário mapeadas para uma unica thread de kernel. (Uma só pode estar no kernel por vez, isso elimina a possibilidade de multithread)
+2.  One-to-one, uma thread de usuário é mapeada para uma thread de kernel. (pode haver restrições de numero de thread para não sobrecarregar)
+3.  Many-to-many, várias threads de usuário mapeadas para várias threads de kernel.
+4.  Two-level, similar a M:M, além de que permite que uma thread de usuário seja conectada a uma thread de sistema.
 
 Thread Pools(reservatorio de thread) são um espaço onde várias threads, préviamente criadas, esperam para serem chamadas. Possui vantagens quanto ao tempo para servir um pedido(uma vez que ela ja está criada), permite que o número de threads de uma aplicação esteja conectada ao limite da pool(reservatorio).
 
@@ -115,11 +113,11 @@ O escalonamento feito entre 1 e 4 é nonpreemptive. Em todos os outros o escalon
 O modulo dispatcher concede o controle da CPU ao processo selecionado pelo short-term scheduler, isso envolve troca de contexto(context switch), mudar para modo de usuário, pular para a localização apropriada no programa de usuário para recomeçar o programa correspondente. O tempo que leva para o dispatcher para o processo que está em andamento e começar outro é chamado de dispatch latency.
 
 Critérios para escalonamento:
--> Utilização da CPU (objetivo do algoritmo: max)
--> Throughput (objetivo do algoritmo: max)
--> Turnaround time (objetivo do algoritmo: min)
--> Waiting time (objetivo do algoritmo: min)
--> Response time (objetivo do algoritmo: min)
+* Utilização da CPU (objetivo do algoritmo: max)
+* Throughput (objetivo do algoritmo: max)
+* Turnaround time (objetivo do algoritmo: min)
+* Waiting time (objetivo do algoritmo: min)
+* Response time (objetivo do algoritmo: min)
 
 Algoritmos de escalonamento(caiu na prova):
 * First Come, First Served
@@ -153,7 +151,7 @@ Um registrador de base e um registrador de limite são utilizados para difinir o
 Programas no HD que estão prontos para serem alocados na memória principal ficam na input queue. Os endereços são representados de diferentes maneiras de acordo com o estágio na "vida" do programa.
 * Source code: endereços são simbolicos
 * Compiled code(codigo compilado): endereços são vinculados a endereços relocáveis(14 bytes do início desse módulo)
-* O vinculador ou carregador ligará endereços relocáveis ​​a endereços absolutos (74014)
+* O vinculador ou carregador ligará endereços relocáveis a endereços absolutos (74014)
 * Cada vínculo mapea um espaço de endereço para outro.
 
 O vinculo de instruções e dados para endereços de memória podem acontecer em três estágios diferentes:
@@ -193,7 +191,7 @@ Segmentação é um suporte a visão de usuário provida pelo esquema de gerenci
 
 O endereço lógico consistem em dois números: <segment number, offset>. A tabela de segmento mapeia endereços físicos de duas dimensões, cada entrada da tabela tem a base, o endereço físico onde o segmento reside an memória e o limit, que especifica o tamanho do segmento. Além disso, tamém tem o bit de proteção associado a cada entrada.
 
-# MEMÓRIA VIRTUAL (Caiu na prova)
+# MEMÓRIA VIRTUAL (caiu na prova)
 
 O programa precisa estar na memória para ser executado, mas não é necessário que todo ele esteja na memória. Isso permite uma criação de processos mais eficiente, mais programas executanto concorrentemente, menos I/O para carregar ou swap de processos.
 
