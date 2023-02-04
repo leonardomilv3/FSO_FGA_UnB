@@ -124,7 +124,7 @@ Além disso cada dispositivo possui endereço que é usado para instruções de 
 
 Tipos de entradas e saídas:
 
-Sondagem (Polling)
+Sondagem (Polling) **(caiu na prova)**
 
 É a interação entre controlador e hospedeiro que é feita atraveś do bit *busy*, quando o bit é 1 o controlador está ocupado, quando é 0 o controlador está pronto para aceitar o próximo comando.
 
@@ -135,7 +135,7 @@ Sondagem (Polling)
 5. Controlador lê o registrador *command* e vê o comando *write*. Ele lê o registrador *data-out* para obter o byte e executa o I/O para o dispositivo
 5. Controlador disliga o bit *command-ready*, desliga o bit *error* no registrador *status* para indicar que o I/O do dispositivo foi bem-sucedido, e desliga o bit *busy* para indicar que terminou
 
-Interrupção
+Interrupção **(caiu na prova)**
 
 É o mecanismo de hardware que habilita um dispositivo para notificar a CPU. A CPU tem uma linha de solicitação de
 interrupção, quando a CPU detecta que um controlador confimou um sinal na linha de solicitação de interrupção, ela
@@ -150,7 +150,7 @@ devem ser interrompidas.
 O mecanismo de interrupção também é usado para tratar *exeception* -> termina processos, "chasha" sistemas por conta
 de erros de hardware. Em sistemas multi-CPU as interrupções podem ser tratadas concorrentemente.
 
-Acesso direto à Memória (importante)
+Acesso direto à Memória **(caiu na prova)**
 
 É usado para evitar I/O programado (um byte por vez) para grandes quantidades de dados. Para que isso seja possível
 é necessário um controlador de DMA que ignora a CPU para transferir dado diretametente entre dispositivo I/O e memória.
@@ -247,7 +247,7 @@ segurança de tipos de linguagem.
 ## SEGURANÇA
 
 Proteção é um problema interno, já segurança deve considerar tanto o sistema de computação 
-quanto o ambiente - pessoas, prédios, empresas, objetos de valor, ameaças - dentro do qual o sistema é usado.
+quanto o ambiente - pessoas, prédios, empresas, objetos de valor, ameaças - dentro do qual o sistema é usado. **(caiu na prova - ler livro para mais detalhes)**
 
 Os dados armazenados no sistema de computação devem ser protegidos contra:
 
@@ -270,7 +270,7 @@ ao sistema
 * Vírus e vermes: são autoperpetuáveis e às vezes infectam milhares de computadores
 * Ataques de recusa de serviço: impedem o uso legítimo de sistemas-alvo
 
-Criptografia: limita o domínio de receptores de dados enquanto 
+Criptografia **(caiu na prova - ler livro para mais detalhes)** : limita o domínio de receptores de dados enquanto 
 
 A criptografia é usada para fornecer sigilo aos dados que estão sendo armazenados ou transferidos. Existem
 dois tipos:
@@ -299,7 +299,7 @@ Os métodos de prevenção ou detecção de incidentes de segurança incluem:
 * Monitoramento de alterações em softwares do sistema
 * Mnitoramento de chamadas de sistema e firewalls
 
-## MAQUINAS VIRTUAIS
+## MAQUINAS VIRTUAIS **(caiu na prova)**
 
 A virtualização fornece a um convidado uma duplicata do hardware subjacente de um sistema. 
 
