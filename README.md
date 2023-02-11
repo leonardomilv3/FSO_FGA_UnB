@@ -14,14 +14,14 @@ Eu, Leonardo Vitoriano, e Bernardo Pissutti reunimos esforços para deixar algun
 - A : [Argumentos de linha de comando](https://moj.naquadah.com.br/contests/ta_fso_ta_t1_2022_2/argc_argv.html)
 - B : [Carga dinâmica de bibliotecas](https://moj.naquadah.com.br/contests/ta_fso_ta_t1_2022_2/dlfun.html)
 
-Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ) para ver as soluções.
+Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ/Lista_1) para ver as soluções.
 
 ## 2ª Lista de FSO 2022-2 - Trabalho 2
 
 - A : [Vetores Idênticos](https://moj.naquadah.com.br/contests/ta_fso_ta_t2_2022_2/fso-vetoresidenticos.html)
 - B : [Processo Preguiçoso](https://moj.naquadah.com.br/contests/ta_fso_ta_t2_2022_2/processo-preguicoso.html)
 
-Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ) para ver as soluções.
+Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ/Lista_2) para ver as soluções.
 
 ## 3ª Lista de FSO 2022-2 - Trabalho 3
 
@@ -29,7 +29,7 @@ Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ)
 - B : [OTM](https://moj.naquadah.com.br/contests/ta_fso_ta_t3_2022_2/fso-substituipaginas-otm.html)
 - C : [LRU](https://moj.naquadah.com.br/contests/ta_fso_ta_t3_2022_2/fso-substituipaginas-lru.html)
 
-Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ) para ver as soluções.
+Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ/Lista_3) para ver as soluções.
 
 ## 4ª Lista de FSO 2022-2 - Trabalho 4
 
@@ -37,4 +37,4 @@ Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ)
 - B : [Operações em arquivos](https://moj.naquadah.com.br/contests/ta_fso_ta_t4_2022_2/samefile.html)
 
 
-Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ) para ver as soluções.
+Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ/Lista_4) para ver as soluções.
