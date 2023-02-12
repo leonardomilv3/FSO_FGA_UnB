@@ -38,3 +38,9 @@ Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ/
 
 
 Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ/Lista_4) para ver as soluções.
+
+## 1ª Formativa de FSO 2022-2 (Ponto extra na P3)
+
+- A : [Timed mini-shell](https://moj.naquadah.com.br/contests/ta_fso_ta_tx1_2022_2/fso-timedshell.html)
+
+Clique [aqui](https://github.com/leonardomilv3/FSO_FGA_UnB/tree/main/Listas_MOJ/Formativa) para ver as soluções.
